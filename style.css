@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: 500px;
+    height: 400px;
+    background-color: #FFF;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.skill-bar{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.skill-bar .skill-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.bar{
+    width: 100%;
+    height: 10px;
+    background-color: #ff44008e;
+    position: relative;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.bar::before{
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 10px;
+    background-color: #ff4500;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    opacity: 0;
+    animation: progress 0.7s ease-in-out forwards;
+    -webkit-animation: progress 0.7s ease-in-out forwards;
+}
+.skill-bar .css::before{
+    width: 80%;
+}
+.skill-bar .js::before{
+    width: 60%;
+}
+.skill-bar .react::before{
+    width: 70%;
+}
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.bar span{
+    position: absolute;
+    right: 0;
+    top: -40px;
+    background-color: #ff4500;
+    padding: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFF;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    z-index: 10;
+}
+.bar span::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    background-color: #ff4500;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) rotate(45deg);
+    -o-transform: translateX(-50%) rotate(45deg);
+}
+/* Responsive */
+@media (max-width: 550px) {
+    .container{
+        width: 96%;
+    }
+}
